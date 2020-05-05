@@ -17,5 +17,12 @@
     	"psr-4": {
             "Daengweb\\OngkosKirim\\": "src/"
     	}
-    }
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Daengweb\\OngkosKirim\\OngkirServiceProvider"
+          ]
+        }
+      }
 }
