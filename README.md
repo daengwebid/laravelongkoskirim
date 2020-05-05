@@ -43,22 +43,21 @@ Jika anda menggunakan command artisan diatas, anda akan dibuatkan file ruangapi.
 
 Tambahkan kode berikut di file .env untuk konfigurasi API ruangapi
 ```
-RAJAONGKIR_ENDPOINTAPI=isi_base_url_api_akun_anda_disini
-RAJAONGKIR_APIKEY=isi_api_key_anda_disini
-```
-atau anda juga dapat langsung melakukan konfigurasi di file rajaongkir.php di folder config seperti kode berikut.
-```php
 'RUANGAPI_KEY' => 'isi_api_key_anda'
+```
+atau anda juga dapat langsung melakukan konfigurasi di file ruangapi.php di folder config seperti kode berikut.
+```php
+'api_key' => env('RUANGAPI_KEY', 'isi_key_anda_disini'),
 ```
 
 **Cara Menggunakan**
 
 Ambil data Provinsi
 ```php
-$data = RajaOngkir::Provinsi()->count();
+$data = RuangApi::getProvinces();
 
 //PASSING SECARA SPESIFIK BERDASARKAN ID PROPINSI
-$data = RajaOngkir::Provinsi(1)->count();
+$data = RuangApi::getProvinces(1);
 ```
 
 Ambil data Kota/Kabupaten
