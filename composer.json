@@ -24,5 +24,15 @@
             "Daengweb\\OngkosKirim\\OngkirServiceProvider"
           ]
         }
-      }
+      },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Daengweb\\OngkosKirim\\OngkirServiceProvider"
+            ],
+            "aliases": {
+                "RuangApi": "Daengweb\\OngkosKirim\\RuangApiFacade"
+            }
+        }
+    }
 }
