@@ -1,11 +1,21 @@
 {
     "name": "daengwebid/laravelongkoskirim",
     "description": "Package Ongkos Kirim Laravel",
+    "keywords": [
+        "laravel ongkos kirim", "API ongkos kirim", "laravel"
+    ],
     "authors": [
         {
             "name": "Anugrah Sandi",
-            "email": "makassarnetwork06@gmail.com"
+            "email": "admin@daengweb.id"
         }
     ],
-    "require": {}
+    "license": "MIT",
+    "type": "package",
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+            "Daengweb\\OngkosKirim\\": "src"
+    	}
+    },
 }
