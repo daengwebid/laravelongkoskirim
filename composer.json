@@ -1,0 +1,11 @@
+{
+    "name": "daengweb/laravelongkoskirim",
+    "description": "Package Ongkos Kirim Laravel",
+    "authors": [
+        {
+            "name": "Anugrah Sandi",
+            "email": "makassarnetwork06@gmail.com"
+        }
+    ],
+    "require": {}
+}
