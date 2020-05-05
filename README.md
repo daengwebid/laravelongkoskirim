@@ -16,8 +16,11 @@ atau
 	}
 }
 ```
+Sejak Laravel 5.5 ke atas, sudah dilengkapi fitur Package Discover sehingga tidak perlu me-register packagenya.
 
-Tambahkan service provider ke config/app.php
+**OPSIONAL**
+
+Adapun pengguna Laravel 5.4 ke bawah, tambahkan service provider ke config/app.php
 ```php
 'providers' => [
 	....
@@ -34,14 +37,40 @@ Tambahkan juga alias ke config/app.php
 	'RuangApi' => Daengweb\OngkosKirim\RuangApiFacade::class,
 ]
 ```
+**END OPSIONAL**
 
-Buat file ruangapi.php di folder config secara manual atau jalankan command artisan
+
+Buat file `ruangapi.php` di folder config secara manual dan tambahkan code berikut
+```php
+<?php
+
+return [
+	/*
+    | Dokumentasi : https://ruangapi.com/dokumentasi/ongkos-kirim
+    */
+
+	'ruangapi_shipping' => env('RUANGAPI_SHIPPING', 'https://ruangapi.com/api/v1/shipping'),
+	'ruangapi_province' => env('RUANGAPI_SHIPPING', 'https://ruangapi.com/api/v1/provinces'),
+	'ruangapi_city' => env('RUANGAPI_SHIPPING', 'https://ruangapi.com/api/v1/cities'),
+	'ruangapi_district' => env('RUANGAPI_SHIPPING', 'https://ruangapi.com/api/v1/districts'),
+
+	/*
+    | Isi dengan APIKey yang didapatkan dari RuangAPI
+    |
+    */
+
+	'api_key' => env('RUANGAPI_KEY', ''),
+];
+```
+
+atau jalankan command artisan untuk publish config-nya secara otomatis
 ```
 php artisan vendor:publish
 ```
-Jika anda menggunakan command artisan diatas, anda akan dibuatkan file ruangapi.php di folder config
+Jika anda menggunakan command artisan diatas, anda akan dibuatkan file `ruangapi.php` di folder config
 
-Tambahkan kode berikut di file .env untuk konfigurasi API ruangapi
+
+Tambahkan kode berikut di file `.env` untuk konfigurasi API ruangapi
 ```
 'RUANGAPI_KEY' => 'isi_api_key_anda'
 ```
